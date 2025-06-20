@@ -13,6 +13,9 @@ class MyApplication : Application() {
     }
 
     private fun setUpDi() {
-        appComponent = DaggerAppComponent.create()
+        appComponent = DaggerAppComponent.factory()
+            .create(
+                application = this,
+            )
     }
 }
